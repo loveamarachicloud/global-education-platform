@@ -157,9 +157,62 @@ export default function Home() {
 </section>
 
       {/* Study Destinations */}
-      <section className="p-20">
-        Study Destinations
-      </section>
+<section id="destinations" className="py-24 px-8">
+  <div className="max-w-7xl mx-auto text-center">
+    <div className="inline-block bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm mb-6">
+      Study Destinations
+    </div>
+
+    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      Explore Your Future Destination
+    </h2>
+
+    <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-8">
+      Discover study opportunities across leading international education
+      destinations and find the right country for your academic and career goals.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 text-left">
+      {[
+        ["🇬🇧","United Kingdom","120+ Universities",["Engineering","Business","Medicine"]],
+        ["🇨🇦","Canada","90+ Universities",["Computer Science","Healthcare","Business"]],
+        ["AU", "Australia", "80+ Universities", ["Nursing", "Information Technology", "Business"]],
+        ["IE", "Ireland", "40+ Universities", ["Data Science", "Artificial Intelligence", "Business"]],
+        ["DE", "Germany", "70+ Universities", ["Engineering", "Manufacturing", "Computer Science"]],
+        ["PT", "Portugal", "35+ Universities", ["Tourism", "Business", "Hospitality"]],
+        ["ES", "Spain", "45+ Universities", ["Architecture", "Hospitality", "Business"]],
+        ["US", "United States", "150+ Universities", ["Computer Science", "Engineering", "Business"]],
+      ].map((destination) => (
+        <div
+          key={destination[1] as string}
+          className="bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 hover:-translate-y-2 transition-all duration-300"
+        >
+          <div className="inline-flex items-center justify-center w-16 h-12 rounded-lg bg-blue-600/20 text-blue-400 text-xl font-bold mb-6">
+  {destination[0] as string}
+</div>
+
+          <h3 className="text-2xl font-bold mb-3">
+            {destination[1] as string}
+          </h3>
+
+          <p className="text-blue-400 font-semibold mb-4">
+            {destination[2] as string}
+          </p>
+
+          <ul className="text-slate-300 space-y-2 mb-8">
+            {(destination[3] as string[]).map((course) => (
+              <li key={course}>• {course}</li>
+            ))}
+          </ul>
+
+          <button className="text-blue-400 font-semibold hover:text-blue-300 transition">
+            Learn More →
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Services */}
       <section className="p-20">
