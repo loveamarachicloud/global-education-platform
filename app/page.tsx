@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -174,22 +175,26 @@ export default function Home() {
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 text-left">
       {[
-        ["🇬🇧","United Kingdom","120+ Universities",["Engineering","Business","Medicine"]],
-        ["🇨🇦","Canada","90+ Universities",["Computer Science","Healthcare","Business"]],
-        ["AU", "Australia", "80+ Universities", ["Nursing", "Information Technology", "Business"]],
-        ["IE", "Ireland", "40+ Universities", ["Data Science", "Artificial Intelligence", "Business"]],
-        ["DE", "Germany", "70+ Universities", ["Engineering", "Manufacturing", "Computer Science"]],
-        ["PT", "Portugal", "35+ Universities", ["Tourism", "Business", "Hospitality"]],
-        ["ES", "Spain", "45+ Universities", ["Architecture", "Hospitality", "Business"]],
-        ["US", "United States", "150+ Universities", ["Computer Science", "Engineering", "Business"]],
-      ].map((destination) => (
+  ["/flags/gb.svg", "United Kingdom", "60+ Universities", ["Engineering", "Business", "Medicine"]],
+  ["/flags/ca.svg", "Canada", "30+ Universities", ["Computer Science", "Healthcare", "Business"]],
+  ["/flags/au.svg", "Australia", "30+ Universities", ["Nursing", "Information Technology", "Business"]],
+  ["/flags/ie.svg", "Ireland", "10+ Universities", ["Data Science", "Artificial Intelligence", "Business"]],
+  ["/flags/de.svg", "Germany", "10+ Universities", ["Engineering", "Manufacturing", "Computer Science"]],
+  ["/flags/pt.svg", "Portugal", "5+ Universities", ["Tourism", "Business", "Hospitality"]],
+  ["/flags/es.svg", "Spain", "5+ Universities", ["Architecture", "Hospitality", "Business"]],
+  ["/flags/us.svg", "United States", "60+ Universities", ["Computer Science", "Engineering", "Business"]],
+].map((destination) => (
         <div
           key={destination[1] as string}
           className="bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 hover:-translate-y-2 transition-all duration-300"
         >
-          <div className="inline-flex items-center justify-center w-16 h-12 rounded-lg bg-blue-600/20 text-blue-400 text-xl font-bold mb-6">
-  {destination[0] as string}
-</div>
+          <Image
+  src={destination[0] as string}
+  alt={`${destination[1] as string} flag`}
+  width={80}
+  height={50}
+  className="mb-6 h-12 w-20 rounded-md object-cover"
+/>
 
           <h3 className="text-2xl font-bold mb-3">
             {destination[1] as string}
