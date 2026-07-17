@@ -220,9 +220,73 @@ export default function Home() {
 </section>
 
       {/* Services */}
-      <section className="p-20">
-        Services
-      </section>
+<section id="services" className="py-24 px-8">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <div className="inline-block bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm mb-6">
+        Our Services
+      </div>
+
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        Support at Every Step of Your Journey
+      </h2>
+
+      <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-8">
+        From choosing the right program to preparing for departure, GlobalEdu
+        provides practical guidance throughout the international education
+        process.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          title: "University Admission",
+          description:
+            "Get support selecting suitable universities, understanding entry requirements, and preparing strong applications.",
+        },
+        {
+          title: "Visa Guidance",
+          description:
+            "Receive clear guidance on visa documents, application steps, timelines, and interview preparation.",
+        },
+        {
+          title: "Scholarship Support",
+          description:
+            "Explore scholarship opportunities and receive help preparing the documents needed for funding applications.",
+        },
+        {
+          title: "Course and Career Guidance",
+          description:
+            "Choose programs that match your academic background, interests, and long-term career goals.",
+        },
+        {
+          title: "Accommodation Support",
+          description:
+            "Understand available housing options and receive guidance on choosing safe and suitable accommodation.",
+        },
+        {
+          title: "Pre-Departure Support",
+          description:
+            "Prepare for travel, arrival, documentation, budgeting, and the transition into your new study destination.",
+        },
+      ].map((service) => (
+        <div
+          key={service.title}
+          className="h-full bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 hover:-translate-y-2 transition-all duration-300"
+        >
+          <h3 className="text-2xl font-bold mb-4">
+            {service.title}
+          </h3>
+
+          <p className="text-slate-300 leading-7">
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Lead Generation */}
       <section className="p-20">
