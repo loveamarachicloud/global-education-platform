@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ConsultationForm from "./components/ConsultationForm";
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -289,9 +290,63 @@ export default function Home() {
 </section>
 
       {/* Lead Generation */}
-      <section className="p-20">
-        Lead Generation Form
-      </section>
+<section id="contact" className="py-24 px-8">
+  <div className="max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <div className="inline-block bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm mb-6">
+          Free Consultation
+        </div>
+
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          Start Your Study Abroad Journey
+        </h2>
+
+        <p className="text-slate-300 text-lg leading-8 mb-8">
+          Share your study goals with us and receive guidance on destinations,
+          suitable programs, admission requirements, and your next application
+          steps.
+        </p>
+
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xl font-bold mb-2">
+              Personalized Guidance
+            </h3>
+            <p className="text-slate-300">
+              Your academic background, budget, goals, and preferred
+              destination will be considered.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-2">
+              Clear Next Steps
+            </h3>
+            <p className="text-slate-300">
+              Receive clear information about eligibility, documents,
+              timelines, and application preparation.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-2">
+              No Initial Consultation Fee
+            </h3>
+            <p className="text-slate-300">
+              Submit your request to begin an initial conversation about your
+              international education plans.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-slate-700 bg-slate-900 p-8">
+        <ConsultationForm />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <section className="p-10 border-t border-slate-800 text-center">
