@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ConsultationForm from "./components/ConsultationForm";
+import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -343,15 +344,13 @@ export default function Home() {
 
       <div className="rounded-2xl border border-slate-700 bg-slate-900 p-8">
         <ConsultationForm />
+        
       </div>
     </div>
   </div>
 </section>
 
-      {/* Footer */}
-      <section className="p-10 border-t border-slate-800 text-center">
-        Footer
-      </section>
+      <Footer />
 
     </main>
   );
