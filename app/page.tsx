@@ -1,41 +1,93 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import ConsultationForm from "./components/ConsultationForm";
 import Footer from "./components/Footer";
 export default function Home() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-slate-950 text-white">
 
       {/* Navigation */}
-      <nav className="flex justify-between items-center px-10 py-6 border-b border-slate-800">
+<nav className="border-b border-slate-800">
+  <div className="flex items-center justify-between px-6 py-6 md:px-10">
+    <h1 className="text-2xl font-bold text-blue-500">
+      GlobalEdu
+    </h1>
 
-  <h1 className="text-2xl font-bold text-blue-500">
-    GlobalEdu
-  </h1>
+    {/* Desktop navigation */}
+    <div className="hidden gap-8 text-slate-300 md:flex">
+      <a href="#about" className="transition hover:text-white">
+        About
+      </a>
 
-  <div className="hidden md:flex gap-8 text-slate-300">
+      <a href="#destinations" className="transition hover:text-white">
+        Destinations
+      </a>
 
-    <a href="#about" className="hover:text-white">
-      About
-    </a>
+      <a href="#services" className="transition hover:text-white">
+        Services
+      </a>
 
-    <a href="#destinations" className="hover:text-white">
-      Destinations
-    </a>
+      <a href="#contact" className="transition hover:text-white">
+        Contact
+      </a>
+    </div>
 
-    <a href="#services" className="hover:text-white">
-      Services
-    </a>
-
-    <a href="#contact" className="hover:text-white">
-      Contact
-    </a>
-
+    {/* Mobile menu button */}
+    <button
+      type="button"
+      className="rounded-md border border-slate-700 px-3 py-2 text-xl text-white md:hidden"
+      aria-label="Toggle navigation menu"
+      aria-expanded={menuOpen}
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      {menuOpen ? "✕" : "☰"}
+    </button>
   </div>
 
-</nav>
+  {/* Mobile navigation */}
+  {menuOpen && (
+    <div className="flex flex-col gap-4 border-t border-slate-800 px-6 py-5 text-slate-300 md:hidden">
+      <a
+        href="#about"
+        className="transition hover:text-white"
+        onClick={() => setMenuOpen(false)}
+      >
+        About
+      </a>
 
+      <a
+        href="#destinations"
+        className="transition hover:text-white"
+        onClick={() => setMenuOpen(false)}
+      >
+        Destinations
+      </a>
+
+      <a
+        href="#services"
+        className="transition hover:text-white"
+        onClick={() => setMenuOpen(false)}
+      >
+        Services
+      </a>
+
+      <a
+        href="#contact"
+        className="transition hover:text-white"
+        onClick={() => setMenuOpen(false)}
+      >
+        Contact
+      </a>
+    </div>
+  )}
+</nav>
       {/* Hero */}
-      <section className="py-28 px-8 text-center">
+      <section className="py-20 md:py-28 px-8 text-center">
 <div className="inline-block bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm mb-6">
     Trusted Study Abroad Guidance
   </div>
@@ -212,9 +264,12 @@ export default function Home() {
             ))}
           </ul>
 
-          <button className="text-blue-400 font-semibold hover:text-blue-300 transition">
-            Learn More →
-          </button>
+          <a
+  href="#contact"
+  className="text-blue-400 font-semibold hover:text-blue-300 transition"
+>
+  Learn More →
+</a>
         </div>
       ))}
     </div>
@@ -222,14 +277,14 @@ export default function Home() {
 </section>
 
       {/* Services */}
-<section id="services" className="py-24 px-8">
+<section id="services" className="py-20 md:py-24 px-8">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
       <div className="inline-block bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm mb-6">
         Our Services
       </div>
 
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
         Support at Every Step of Your Journey
       </h2>
 
@@ -275,7 +330,7 @@ export default function Home() {
       ].map((service) => (
         <div
           key={service.title}
-          className="h-full bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 hover:-translate-y-2 transition-all duration-300"
+          className="h-full bg-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 md:hover:-translate-y-2 transition-all duration-300"
         >
           <h3 className="text-2xl font-bold mb-4">
             {service.title}
