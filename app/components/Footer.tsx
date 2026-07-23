@@ -105,7 +105,9 @@ export default function Footer() {
 </div>
         </div>
         <div className="mt-10 border-t border-slate-800 pt-6 text-center text-sm text-slate-400">
-  <p>© 2026 Global Education Platform. All rights reserved.</p>
+  <p className="text-gray-400 text-sm text-center">
+  © 2026 Global Education Overseas Studies Limited. Trading as GlobalEdu. All rights reserved.
+</p>
 </div>
       </div>
     </footer>

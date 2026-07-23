@@ -12,11 +12,28 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-white">
 
       {/* Navigation */}
-<nav className="border-b border-slate-800">
+<nav className="border-b border-slate-800 px-6 py-3 md:px-12">
   <div className="flex items-center justify-between px-6 py-6 md:px-10">
-    <h1 className="text-2xl font-bold text-blue-500">
-      GlobalEdu
-    </h1>
+    <a
+  href="#home"
+  className="flex items-center gap-3"
+  aria-label="GlobalEdu Home"
+>
+  <Image
+    src="/globaledu-icon.png"
+    alt="GlobalEdu Logo"
+    width={85}
+    height={85}
+    priority
+    className="h-17 w-17 object-contain"
+  />
+
+  <span className="text-2xl font-bold">
+    <span className="text-white">Global</span>
+    <span className="text-blue-500">Edu</span>
+  </span>
+</a>
+  
 
     {/* Desktop navigation */}
     <div className="hidden gap-8 text-slate-300 md:flex">
